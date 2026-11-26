@@ -1,0 +1,60 @@
+# Aucun secret ici : tout passe par des variables d'environnement (voir ../infrastructure/.env.example).
+spring:
+  application:
+    name: urgences-api
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: ${URGENCES_DB_URL:jdbc:mysql://localhost:3308/urgences?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${URGENCES_DB_USER:urgences}
+    password: ${URGENCES_DB_PASSWORD}
+    hikari:
+      connection-timeout: 3000
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+  web:
+    error:
+      include-stacktrace: never
+      include-message: never
+
+server:
+  port: ${PORT:8082}
+  shutdown: graceful
+
+urgences:
+  security:
+    # Au moins 32 caractères (HS256). Obligatoire : l'API refuse de démarrer sans.
+    jwt-secret: ${URGENCES_JWT_SECRET}
+    token-validity: ${URGENCES_TOKEN_VALIDITY:12h}
+    # Origines autorisées pour Flutter web en développement (motifs, séparés par des virgules).
+    cors-allowed-origin-patterns: ${URGENCES_CORS_ORIGINS:http://localhost:[*],http://127.0.0.1:[*]}
+  # Compte « secours » de démonstration, créé au démarrage seulement si les deux variables sont fournies.
+  # Il permet de tester de vraies décisions (acceptation, refus…) en attendant les modules E3/E6.
+  dev-responder:
+    email: ${URGENCES_DEV_RESPONDER_EMAIL:}
+    password: ${URGENCES_DEV_RESPONDER_PASSWORD:}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+logging:
+  level:
+    # Jamais de corps de requête dans les journaux : ils contiennent des positions GPS.
+    org.springframework.web: INFO

@@ -1,0 +1,43 @@
+# Lancement local : MySQL seul (développement) ou MySQL + API.
+#   docker compose --env-file .env up -d mysql        -> MySQL sur localhost:3308
+#   docker compose --env-file .env up -d --build      -> MySQL + API sur localhost:8082
+name: urgences
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: urgences
+      MYSQL_USER: ${URGENCES_DB_USER:?définir URGENCES_DB_USER dans .env}
+      MYSQL_PASSWORD: ${URGENCES_DB_PASSWORD:?définir URGENCES_DB_PASSWORD dans .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?définir MYSQL_ROOT_PASSWORD dans .env}
+    # Uniquement sur la machine locale, jamais exposé sur le réseau.
+    ports:
+      - "127.0.0.1:3308:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  api:
+    build: ../backend
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      URGENCES_DB_URL: jdbc:mysql://mysql:3306/urgences?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      URGENCES_DB_USER: ${URGENCES_DB_USER}
+      URGENCES_DB_PASSWORD: ${URGENCES_DB_PASSWORD}
+      URGENCES_JWT_SECRET: ${URGENCES_JWT_SECRET:?définir URGENCES_JWT_SECRET (32 caractères min.)}
+      URGENCES_DEV_RESPONDER_EMAIL: ${URGENCES_DEV_RESPONDER_EMAIL:-}
+      URGENCES_DEV_RESPONDER_PASSWORD: ${URGENCES_DEV_RESPONDER_PASSWORD:-}
+    ports:
+      - "127.0.0.1:8082:8082"
+
+volumes:
+  mysql-data:

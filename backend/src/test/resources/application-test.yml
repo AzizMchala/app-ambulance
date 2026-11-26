@@ -1,0 +1,10 @@
+# Valeurs de test uniquement : jamais utilisées ailleurs.
+urgences:
+  security:
+    jwt-secret: test-only-secret-not-used-anywhere-else-0000
+spring:
+  datasource:
+    # Remplacé par Testcontainers, sauf si URGENCES_TEST_DB_URL vise un MySQL local.
+    url: ${URGENCES_TEST_DB_URL:jdbc:mysql://unused/unused}
+    username: ${URGENCES_TEST_DB_USER:unused}
+    password: ${URGENCES_TEST_DB_PASSWORD:unused}
