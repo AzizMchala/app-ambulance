@@ -1,0 +1,275 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Urgences",
+  "commonRetry": "Réessayer",
+  "commonCancel": "Annuler",
+  "commonClose": "Fermer",
+  "commonSeeDetails": "Voir les détails",
+  "errorNetwork": "Pas de connexion au serveur. Vérifiez votre réseau.",
+  "errorTimeout": "Le serveur met trop de temps à répondre.",
+  "errorUnauthenticated": "Votre session a expiré. Reconnectez-vous.",
+  "errorForbidden": "Vous n'avez pas accès à cette ressource.",
+  "errorNotFound": "Élément introuvable.",
+  "errorValidation": "Certaines informations sont invalides.",
+  "errorServer": "Le serveur a rencontré une erreur. Réessayez dans un instant.",
+  "errorUnexpected": "Une erreur inattendue est survenue.",
+  "errorSosAlreadyActive": "Vous avez déjà une demande SOS en cours.",
+  "errorInvalidTransition": "Cette demande ne peut plus être modifiée.",
+  "authLoginTitle": "Connexion",
+  "authLoginSubtitle": "Accédez à votre espace.",
+  "authEmail": "Adresse e-mail",
+  "authPassword": "Mot de passe",
+  "authLoginAction": "Se connecter",
+  "authNoAccount": "Pas encore de compte ?",
+  "authCreateAccount": "Créer un compte",
+  "authRegisterTitle": "Créer un compte",
+  "authRegisterSubtitle": "Quelques informations pour vous identifier auprès des secours.",
+  "authFullName": "Nom complet",
+  "authRegisterAction": "Créer mon compte",
+  "authHaveAccount": "Déjà inscrit ?",
+  "authInvalidCredentials": "E-mail ou mot de passe incorrect.",
+  "authEmailTaken": "Cette adresse e-mail est déjà utilisée.",
+  "authEmailInvalid": "Adresse e-mail invalide.",
+  "authPasswordTooShort": "8 caractères minimum.",
+  "authFieldRequired": "Champ obligatoire.",
+  "authLogout": "Se déconnecter",
+  "sosHomeGreeting": "Bonjour {name}",
+  "@sosHomeGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sosHomeTitle": "Besoin d'une aide médicale ?",
+  "sosHomeSubtitle": "Rien n'est envoyé sans votre confirmation.",
+  "sosButtonLabel": "SOS",
+  "sosButtonHint": "Préparer une alerte",
+  "sosButtonSemantics": "Bouton SOS. Ouvre la vérification de l'alerte avant envoi.",
+  "locationTitle": "Votre position",
+  "locationChecking": "Vérification de la localisation…",
+  "locationAcquiring": "Recherche du signal GPS…",
+  "locationReady": "Position GPS disponible",
+  "locationAccuracy": "Précision ± {meters} m",
+  "@locationAccuracy": {
+    "placeholders": {
+      "meters": {
+        "type": "int"
+      }
+    }
+  },
+  "locationStale": "Position ancienne",
+  "locationStaleAge": "Relevée il y a {minutes} min : elle n'est peut-être plus exacte.",
+  "@locationStaleAge": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "locationServiceOff": "La localisation est désactivée",
+  "locationServiceOffHint": "Activez-la pour joindre votre position à l'alerte.",
+  "locationPermissionNeeded": "Autorisation nécessaire",
+  "locationPermissionNeededHint": "Votre position aide les secours à vous trouver plus vite.",
+  "locationPermissionDenied": "Accès à la position refusé",
+  "locationPermissionDeniedForeverHint": "Autorisez la localisation dans les réglages, ou saisissez votre adresse.",
+  "locationTimeout": "Aucun signal GPS pour l'instant",
+  "locationTimeoutHint": "Rapprochez-vous d'une fenêtre, réessayez ou saisissez votre adresse.",
+  "locationError": "Localisation indisponible",
+  "locationErrorHint": "Vous pouvez saisir votre adresse à la place.",
+  "locationActionEnable": "Activer",
+  "locationActionAllow": "Autoriser",
+  "locationActionSettings": "Réglages",
+  "locationActionRetry": "Réessayer",
+  "locationActionRefresh": "Actualiser la position",
+  "locationSourceGps": "GPS en direct",
+  "locationSourceLastKnown": "Dernière position connue",
+  "locationSourceManual": "Adresse saisie",
+  "locationCoordinates": "Coordonnées",
+  "locationCapturedAt": "Relevée à {time}",
+  "@locationCapturedAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "locationMapUnavailable": "Carte indisponible sans position GPS",
+  "latestTitle": "Dernière demande",
+  "latestEmpty": "Aucune demande envoyée pour l'instant.",
+  "homeHistory": "Historique",
+  "homeHistoryHint": "Toutes vos demandes",
+  "homeCall": "Appeler le {number}",
+  "@homeCall": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "homeCallHint": "SAMU, même sans Internet",
+  "reviewTitle": "Vérifier l'alerte",
+  "reviewIntro": "Contrôlez votre localisation avant d'envoyer.",
+  "reviewAddressLabel": "Adresse ou repère",
+  "reviewAddressHintGps": "Facultatif : étage, bâtiment, repère…",
+  "reviewAddressHintRequired": "Rue, ville, repère visible…",
+  "reviewAddressRequired": "Saisissez une adresse : aucune position GPS utilisable.",
+  "reviewAddressTooShort": "Adresse trop courte (5 caractères minimum).",
+  "reviewUseStale": "Envoyer quand même cette position ancienne",
+  "reviewNoCoordinates": "Aucune coordonnée GPS ne sera envoyée : l'adresse saisie sera la seule localisation.",
+  "reviewSend": "Envoyer l'alerte SOS",
+  "reviewSending": "Envoi en cours…",
+  "confirmTitle": "Envoyer l'alerte ?",
+  "confirmBody": "Votre demande sera transmise aux secours avec la localisation ci-dessous.",
+  "confirmSend": "Envoyer",
+  "sendFailedTitle": "L'alerte n'a pas été envoyée",
+  "sendFailedNetworkHint": "Si c'est urgent, appelez directement le {number}.",
+  "@sendFailedNetworkHint": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "sendViewActive": "Voir la demande en cours",
+  "sentBanner": "Alerte enregistrée par le serveur. Les secours ont reçu votre demande.",
+  "historyTitle": "Historique",
+  "historyEmptyTitle": "Aucune demande",
+  "historyEmptyBody": "Vos demandes SOS apparaîtront ici dès leur envoi.",
+  "historyLoadMoreError": "Impossible de charger la suite.",
+  "requestNumber": "Demande n° {id}",
+  "@requestNumber": {
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
+  "statusPending": "En attente",
+  "statusAccepted": "Acceptée",
+  "statusInProgress": "En cours",
+  "statusCompleted": "Terminée",
+  "statusRejected": "Refusée",
+  "statusCancelled": "Annulée",
+  "statusUnknown": "Inconnu",
+  "statusHeadlinePending": "En attente de décision",
+  "statusHeadlineAccepted": "Demande acceptée",
+  "statusHeadlineInProgress": "Prise en charge en cours",
+  "statusHeadlineCompleted": "Intervention terminée",
+  "statusHeadlineRejected": "Demande refusée",
+  "statusHeadlineCancelled": "Demande annulée",
+  "statusHeadlineUnknown": "Statut non reconnu par l'application",
+  "detailDecision": "Décision",
+  "detailNoDecision": "Aucune décision reçue pour l'instant.",
+  "detailDecisionMessage": "Message des secours",
+  "detailNoDecisionMessage": "Aucun message n'accompagne cette décision.",
+  "detailLocation": "Localisation",
+  "detailInfo": "Informations",
+  "detailId": "Identifiant",
+  "detailDate": "Date",
+  "detailTime": "Heure",
+  "detailUpdated": "Dernière mise à jour",
+  "detailCapturedAt": "Position relevée",
+  "detailTimeline": "Suivi du statut",
+  "detailTimelineEmpty": "Aucun changement de statut enregistré.",
+  "detailAutoRefresh": "Actualisation automatique",
+  "detailUpdatedAt": "Mis à jour {when}",
+  "@detailUpdatedAt": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "detailCancel": "Annuler la demande",
+  "detailCancelTitle": "Annuler cette demande ?",
+  "detailCancelBody": "Les secours sauront que vous n'avez plus besoin d'aide.",
+  "detailCancelConfirm": "Oui, annuler",
+  "detailKeep": "Garder",
+  "detailCancelled": "Demande annulée.",
+  "detailRefreshFailed": "Actualisation impossible : les informations affichées peuvent être anciennes.",
+  "relativeNow": "à l'instant",
+  "relativeMinutes": "il y a {n} min",
+  "@relativeMinutes": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeHours": "il y a {n} h",
+  "@relativeHours": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "relativeAt": "le {date}",
+  "@relativeAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "roleHospital": "Espace hôpital",
+  "hospitalGreeting": "Bonjour {name}",
+  "@hospitalGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "hospitalTitle": "Demandes SOS",
+  "hospitalSubtitle": "Actualisation automatique toutes les 15 secondes.",
+  "hospitalTabToHandle": "À traiter",
+  "hospitalTabOngoing": "En cours",
+  "hospitalTabClosed": "Clôturées",
+  "hospitalEmptyToHandle": "Aucune demande en attente.",
+  "hospitalEmptyOngoing": "Aucune intervention en cours.",
+  "hospitalEmptyClosed": "Aucune demande clôturée.",
+  "hospitalEmptyBody": "Les nouvelles alertes apparaîtront ici automatiquement.",
+  "hospitalPatient": "Patient",
+  "hospitalPatientId": "Dossier patient n° {id}",
+  "@hospitalPatientId": {
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
+  "hospitalStaleWarning": "Position ancienne : relevée {when}. Confirmez l'adresse avec le patient si possible.",
+  "@hospitalStaleWarning": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "hospitalDirections": "Itinéraire",
+  "hospitalActionAccept": "Accepter",
+  "hospitalActionReject": "Refuser",
+  "hospitalActionStart": "Démarrer",
+  "hospitalActionComplete": "Terminer",
+  "hospitalSheetAcceptTitle": "Accepter la demande",
+  "hospitalSheetRejectTitle": "Refuser la demande",
+  "hospitalSheetStartTitle": "Intervention en cours",
+  "hospitalSheetCompleteTitle": "Terminer l'intervention",
+  "hospitalSheetBody": "Le patient verra ce changement et votre message sur son écran de suivi.",
+  "hospitalMessageLabel": "Message pour le patient",
+  "hospitalMessageHintOptional": "Facultatif : ex. « Ambulance en route, arrivée dans 10 min »",
+  "hospitalMessageHintRequired": "Obligatoire : raison du refus et conseil au patient",
+  "hospitalMessageRequired": "Un message est obligatoire pour refuser une demande.",
+  "hospitalDecisionSaved": "Décision enregistrée : {status}.",
+  "@hospitalDecisionSaved": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "hospitalDecisionConflict": "La demande a changé entre-temps (annulée par le patient ou traitée par un collègue). Elle a été rechargée.",
+  "hospitalNoAction": "Demande clôturée : aucune action possible."
+}
