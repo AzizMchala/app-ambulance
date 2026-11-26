@@ -1,0 +1,13 @@
+# Secrets locaux : jamais dans Git
+infrastructure/.env
+**/.env
+mobile/config/secrets.local.json
+
+# Builds et IDE
+backend/target/
+mobile/build/
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
